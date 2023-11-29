@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body class="py-4 mx-auto">
+    <div class="container bg-white mx-auto h-auto border rounded">
+        <div class="row bg-light">
+            <div class="col border border-b-dark p-2 ps-3"><h1>Payment form example</h1></div>
+        </div>
+        <form> 
+            <div class=" p-3">   
+                <div class="row">
+                    <div class="alert alert-danger" role="alert">Some field are missing</div>            
+                </div>
+                
+                <div class="row d-flex">
+                    <div class="col-md-5 col-s-12">
+                        <fieldset>
+                            <label for="card" class="form-label">Card</label>
+                            <input type="number" class="form-control" id="card" placeholder="XXXXXXXXXX" required/>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-3 col-xs-12">
+                        <fieldset>
+                            <label for="cvc" class="form-label">CVC</label>
+                            <input type="number" class="form-control" id="cvc" placeholder="00000" required/>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-4 col-s-12 d-flex">
+                        <fieldset class="w-100">
+                            <label for="amount" class="form-label">Amount</label>
+                            <div class="d-flex w-100">
+                                <span class="input-group-text">$</span><input type="number" class="form-control" aria-label="Amount" required>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>                
+                
+                    <div class="row mt-3">
+                        <div class="col-md-6 col-s-12">
+                            <fieldset>
+                                <label for="name" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="name"/>
+                            </fieldset>
+                            <fieldset class="mt-2">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city"/>
+                            </fieldset>                        
+                            <fieldset class="mt-2">
+                                <div class="d-grid justify-content-start ">
+                                    <label class="form-label" for="tarjeta">We accept:</label>
+                                    <div class="bg-light form-check-inline p-2">                           
+                                        <input type="radio" class="form-check-input" name="tarjeta" id="visa" autocomplete="off" required>
+                                        <label class="form-check-label" for="visa">
+                                            <i class="fab fa-cc-visa fs-4 me-2"></i>
+                                        </label>
+
+                                        <input type="radio" class="form-check-input" name="tarjeta" id="mastercard" autocomplete="off">
+                                        <label class="form-check-label" for="mastercard">
+                                            <i class="fab fa-cc-mastercard fs-4 me-2"></i>
+                                        </label>
+                                        
+                                        <input type="radio" class="form-check-input" name="tarjeta" id="amex" autocomplete="off">
+                                        <label class="form-check-label" for="amex">
+                                            <i class="fab fa-cc-amex fs-4 me-2"></i>
+                                        </label>
+                                        <input type="radio" class="form-check-input" name="tarjeta" id="discover" autocomplete="off">
+                                        <label class="form-check-label" for="discover">
+                                            <i class="fa-brands fa-cc-diners-club fs-4"></i> 
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>                            
+                        </div>
+
+                        <div class="col-md-6 col-s-12">
+                            <fieldset>
+                                <label for="lastname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastname"/>
+                            </fieldset>
+                            <div class="d-flex flex-row justify-content-between mt-2">
+                                <fieldset class="me-1 w-50 me-4">
+                                    <label for="state" class="form-label">State</label>
+                                    <select class="form-select" aria-label="select">
+                                        <option selected="">Pick a state</option>
+                                        <option value="1">USA</option>
+                                        <option value="2">Italy</option>
+                                        <option value="3">France</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="w-50">
+                                    <label for="postalcode" class="form-label">Postal Code</label>
+                                    <input type="number" class="form-control" id="postalcode"/>
+                                </fieldset>
+                            </div>
+                            <fieldset class="mt-2">
+                                <label for="messsage" class="form-label">Message:</label><br>
+                                <textarea name="message" id="message" class="form-control" rows="3"></textarea>
+                                <div id="messageHelp" class="form-text">
+                                    Add any notes here.
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row ">
+                    <div class="col d-flex flex-direction-row justify-content-end mt-2 bg-light p-3 border border-b-dark">
+                        <input class="btn btn-secondary me-2" type="reset" value="Cancel">
+                        <input class="btn btn-primary" type="submit" value="Send">
+                    </div>
+            </div>
+
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
